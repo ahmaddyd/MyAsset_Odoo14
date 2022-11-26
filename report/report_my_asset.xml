@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_my_asset_call">
+        <div class="page">
+            <div class="row">
+                <table style="width: 100%; border: 1px solid black">
+                    <tr>
+                        <td style="width: 25%; font-size:20px; border: 1px solid black">Asset No</td>
+                        <td style="width: 25%;font-size:20px; border: 1px solid black"><span
+                                t-field="o.asset_no"/></td>
+                        <td style="width: 25%;font-size:20px; border: 1px solid black">Location</td>
+                        <td style="width: 25%;font-size:20px; border: 1px solid black"><span
+                                t-field="o.location"/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:20px; border: 1px solid black">Owner</td>
+                        <td style="font-size:20px; border: 1px solid black"><span
+                                t-field="o.owner"/></td>
+                        <td style="font-size:20px; border: 1px solid black">Date</td>
+                        <td style="font-size:20px; border: 1px solid black"><span
+                                t-field="o.date" t-options='{"widget": "date"}'/></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:20px; border: 1px solid black" colspan="4">Description :
+                            <br/>
+                            <span t-field="o.description"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </template>
+</odoo>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright 2019 Coop IT Easy
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <data>
+        <!-- My Asset Tree view -->
+        <!-- odoo_tree (odoo tree) -->
+        <record id="my_asset_view_tree" model="ir.ui.view">
+            <field name="name">My Asset Tree</field>
+            <field name="model">my.asset</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="My Asset">
+                    <field name="asset_no"/>
+                    <field name="owner"/>
+                    <field name="description"/>
+                    <field name="location"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="my_asset_view_form" model="ir.ui.view">
+            <field name="name">My Asset Form</field>
+            <field name="model">my.asset</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Form My Asset">
+                    <sheet>
+                        <group string="My Asset">
+                            <field name="asset_no"/>
+                            <field name="owner"/>
+                            <field name="description"/>
+                            <field name="location"/>
+                            <field name="date"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- My Asset Kanban view -->
+        <!-- odoo_kanban (odoo kanban) -->
+        <record id="my_asset_view_kanban" model="ir.ui.view">
+            <field name="name">my.asset.kanban</field>
+            <field name="model">my.asset</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <!-- Add your fields here -->
+                    <field name="asset_no"/>
+                    <field name="owner"/>
+                    <field name="location"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong><field name="asset_no"/></strong>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong><field name="owner"/></strong>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong><field name="location"/></strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- My Asset Action window -->
+        <!-- odoo_wind_action (odoo action) -->
+        <record id="my_asset_action" model="ir.actions.act_window">
+            <field name="name">My Asset</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">my.asset</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem
+                id="my_asset_menu_act"
+                name="My Asset"
+                parent="my_asset_root"
+                action="my_asset_action"
+                sequence="10"/>
+    </data>
+</odoo>

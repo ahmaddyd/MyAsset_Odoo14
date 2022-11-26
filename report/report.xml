@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_my_asset_print">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="testing_new_folder.report_my_asset_call"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_my_asset" model="ir.actions.report">
+            <field name="name">My Asset Print</field>
+            <field name="model">my.asset</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">testing_new_folder.report_my_asset_print</field>
+            <field name="report_file">testing_new_folder.report_my_asset_print</field>
+            <field name="binding_type">report</field>
+            <field name="binding_model_id" ref="model_my_asset"/>
+        </record>
+    </data>
+</odoo>
