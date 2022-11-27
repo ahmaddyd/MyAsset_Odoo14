@@ -3,7 +3,7 @@
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-Wedding Organizer merupakan sistem berbasis ERP menggunakan Odoo Framework yang melayani: 
+My Asset merupakan sistem berbasis ERP menggunakan Odoo Framework yang melayani: 
 - Memiliki 1 fungsi ( onchange ) ketika owner diubah, maka ubah date sebagai hari ini (today), 
 - Memiliki 1 compute field Isikan Asset No dengan format YYYYMMDDHHMM
 contoh: 202107281131
